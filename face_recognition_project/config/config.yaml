@@ -1,0 +1,17 @@
+database:
+  url: "sqlite:///face_recognition.db"
+  pool_size: 5
+  max_overflow: 10
+
+face_recognition:
+  tolerance: 0.6
+  model: "cnn"
+  known_faces_dir: "known_faces"
+
+security:
+  secret_key: "your-secret-key"
+  token_expiry: 3600
+
+logging:
+  level: "INFO"
+  file: "app.log"
