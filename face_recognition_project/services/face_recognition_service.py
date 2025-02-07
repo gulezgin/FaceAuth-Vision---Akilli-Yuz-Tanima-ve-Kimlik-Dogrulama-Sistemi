@@ -95,8 +95,9 @@ class FaceRecognitionService:
 
     def stop_camera(self):
         try:
-            if hasattr(self, 'video_capture'):
+            if hasattr(self, 'video_capture') and self.video_capture:
                 self.video_capture.release()
+                self.video_capture = None
                 self.logger.info("Kamera kapatıldı")
         except Exception as e:
             self.logger.error(f"Kamera kapatılırken hata: {str(e)}")
